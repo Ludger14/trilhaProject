@@ -1,0 +1,29 @@
+<section id="Home" class="banner">
+    <div class="layer">
+        <div class="center">
+            <div class="home" *ngFor="let tex of conteudo">
+                <h1>{{ tex.titulo }}</h1>
+                <p>{{ tex.texto }} <span>#vamoqvamo</span></p>
+            </div>
+            <div class="formulario">
+                <form action="" method="post" id="cadastrar">
+                    <div id="sucesso" class="sucesso">Formulário enviado com sucesso.</div>
+                    <div id="erro" class="erro">Sinto muito, a sua mensagem não foi enviada. Tente em outro instante!</div>                        
+                    <input type="text" name="nome" id="nome" placeholder="Coloque o seu nome...">
+                    <input type="text" name="email" id="email" placeholder="Coloque o seu email...">                                              
+                    <input type="text" name="telefone" id="telefone" placeholder="Coloque o seu número...">
+                    <select onchange="habilitaBtn()" name="passeio" id="passeio">
+                        <option value="0">Escolha o seu passeio...</option>
+                        <option value="1">Pedra Bonita</option>
+                        <option value="2">Costão de Itaquatiara</option>
+                        <option value="3">Pedra do Telégrafo</option>
+                        <option value="4">Pico da Tijuca Mirim</option>
+                        <option value="5">Praia do Perigoso</option>
+                        <option value="6">Morro da Urca</option>
+                    </select>
+                    <input type="submit" value="Cadastrar!">                        
+                </form>
+            </div>                
+        </div>
+    </div>        
+  </section>   

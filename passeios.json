@@ -1,0 +1,48 @@
+[{
+    "title": "Pedra Bonita",
+    "img": "../assets/img/pedrabonita.jpg",
+    "encontro": "Floresta da Tijuca",
+    "Tempo": "25-35 minutos",
+    "Guia": "Felipe",
+    "Dia/Horário": "Sábado - 10h"
+ },
+ {
+    "title": "Costão de Itaquatiara",
+    "img": "../assets/img/costao.jpg",
+    "encontro": "Praia de Itaquatiara",
+    "Tempo": "30 minutos",
+    "Guia": "Felipe",
+    "Dia/Horário": "Domingo - 09h"
+ },
+ {
+    "title": "Pedra do Telégrafo",
+    "img": "../assets/img/telegrafo.jpg",
+    "encontro": "Barra de Guaratiba",
+    "Tempo": "35-45 minutos",
+    "Guia": "Ernesto",
+    "Dia/Horário": "Domingo - 08h"
+ },
+ {
+    "title": "Pico da Tijuca Mirim",
+    "img": "../assets/img/pigotijuca.png",
+    "encontro": "Praça Afonso Vizeu",
+    "Tempo": "45-50 minutos",
+    "Guia": "Ernesto",
+    "Dia/Horário": "Domingo - 10h"
+ },
+ {
+    "title": "Praia do Perigoso",
+    "img": "../assets/img/praiaperigoso.jpeg",
+    "encontro": "Barra de Guaratiba",
+    "Tempo": "30-40 minutos",
+    "Guia": "Felipe",
+    "Dia/Horário": "Domingo - 10h"
+ },
+ {
+    "title": "Morro da Urca",
+    "img": "../assets/img/morrourca.jpg",
+    "encontro": "Barra de Guaratiba",
+    "Tempo": "25-30 minutos",
+    "Guia": "Ernesto",
+    "Dia/Horário": "Sábado - 10h"
+ }]
