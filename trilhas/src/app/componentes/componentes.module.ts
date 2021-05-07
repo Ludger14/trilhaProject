@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './home/home.component';
 import { CrudComponent } from './crud/crud.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [    
@@ -11,7 +11,8 @@ import { CrudComponent } from './crud/crud.component';
     CrudComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
   exports: [    
     HomeComponent,    

@@ -171,7 +171,7 @@ section.banner{
 .formulario form select{    
     color: #02896f;
 }
-.formulario form input[type=submit] {
+.formulario form button[type=submit] {
     color: white;
     text-decoration: none;
     width: 100%;

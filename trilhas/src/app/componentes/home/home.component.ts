@@ -35,6 +35,10 @@ export class HomeComponent implements OnInit {
     this.contato = homeServ.getContato();
    }
 
+   onSubmit(formulario){
+    console.log(formulario.form.value);
+  }
+
   ngOnInit(): void {
   }
 

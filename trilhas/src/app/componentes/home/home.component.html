@@ -22,22 +22,22 @@
                 <p>{{ tex.texto }} <span>#vamoqvamo</span></p>
             </div>
             <div class="formulario">
-                <form action="" method="post" id="cadastrar">
+                <form action="" method="post" #cadastrar="ngForm" (ngSubmit)="onSubmit(cadastrar)">
                     <div id="sucesso" class="sucesso">Formulário enviado com sucesso.</div>
                     <div id="erro" class="erro">Sinto muito, a sua mensagem não foi enviada. Tente em outro instante!</div>                        
-                    <input type="text" name="nome" id="nome" placeholder="Coloque o seu nome...">
-                    <input type="text" name="email" id="email" placeholder="Coloque o seu email...">                                              
-                    <input type="text" name="telefone" id="telefone" placeholder="Coloque o seu número...">
-                    <select onchange="habilitaBtn()" name="passeio" id="passeio">
+                    <input type="text" name="nome" id="nome" placeholder="Coloque o seu nome..." ngModel>
+                    <input type="text" name="email" id="email" placeholder="Coloque o seu email..." ngModel>                                              
+                    <input type="text" name="telefone" id="telefone" placeholder="Coloque o seu número..." ngModel>
+                    <select onchange="habilitaBtn()" name="passeio" id="passeio" ngModel>
                         <option value="0">Escolha o seu passeio...</option>
-                        <option value="1">Pedra Bonita</option>
-                        <option value="2">Costão de Itaquatiara</option>
-                        <option value="3">Pedra do Telégrafo</option>
-                        <option value="4">Pico da Tijuca Mirim</option>
-                        <option value="5">Praia do Perigoso</option>
-                        <option value="6">Morro da Urca</option>
+                        <option value="Pedra Bonita">Pedra Bonita</option>
+                        <option value="Costão de Itaquatiara">Costão de Itaquatiara</option>
+                        <option value="Pedra do Telégrafo">Pedra do Telégrafo</option>
+                        <option value="Pico da Tijuca Mirim">Pico da Tijuca Mirim</option>
+                        <option value="Praia do Perigoso">Praia do Perigoso</option>
+                        <option value="Morro da Urca">Morro da Urca</option>
                     </select>
-                    <input type="submit" value="Cadastrar!">                        
+                    <button type="submit">Cadastrar!</button>                        
                 </form>
             </div>                
         </div>

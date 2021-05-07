@@ -6,7 +6,7 @@
 }
 html,body{
 	height: 100%;
-	background-color: rgb(225,225,225);
+	background-color: rgba(200,200,200, .3);
 }
 body{
 	overflow-x: hidden;
@@ -34,7 +34,7 @@ body{
 .menu-wrapper{
 	width: 250px;
 }
-header{
+section.crud{
 	padding: 10px 0;
 	background-color: #78909c;
 	width: calc(100% - 250px);	
@@ -44,7 +44,7 @@ header{
 .clear{
 	clear: both;
 }
-.center{	
+.centro{	
 	margin: 0 auto;
 	padding: 0 2%;
 }
@@ -54,11 +54,10 @@ header{
 .logout a{
 	color: white;
 	text-decoration: none;
-	font-size: 20px;	
+	font-size: 20px;
+	padding: 0 20px;
 	position: relative;
 	top: 0;
-	background-color: #60727a;
-	padding: 10px 10px;
 }
 .menu-btn{
 	float: left;
@@ -85,6 +84,22 @@ div.box-usuario{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+}
+.img-usuario{
+	width: 130px;
+	height: 130px;	
+	display: inline-block;
+	border: 3px solid #2f3d42;
+	border-radius: 50%;
+	position: relative;
+}
+.img-usuario img{
+	width: 100%;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
 }
 .nome-usuario{
 	text-align: center;
@@ -153,9 +168,11 @@ div.box-usuario{
 	background-color: #0095ea;
 }
 /*Tabelas*/
+
 .wraper-table{
 	overflow-x: auto;
 }
+
 table{
 	font-weight: 300;
 	min-width: 900px;
@@ -163,16 +180,20 @@ table{
 	width: 100%;
 	border-collapse: collapse;
 }
+
 table tr:nth-of-type(1){
 	background: #02896f;
 	color: white;
 }
+
 table tr{
 	border-bottom: 1px solid #ccc;
 }
+
 table tr{
 	color: #555;
 }
+
 table td{
 	padding: 8px;
 }
@@ -183,26 +204,31 @@ table a.btn{
 	text-decoration: none;
 	padding: 4px 6px;
 }
+
 a.btn.edit{background: #F4B03E;}
 a.btn.delete{background: #E05C4E;}
 a.btn.order{background: #0091ea;}
 
 /*Tabela Responsiva*/
+
 .table-responsive{
 	margin:20px auto;
 	font-weight: 300;
 }
+
 .table-responsive .row:nth-of-type(1){
 	font-weight: normal;
 	background: #454a5a;
 	padding: 10px;
 	color: white;
 }
+
 .table-responsive .row{
 	color: #777;
 	padding: 8px;
 	border-bottom: 1px solid #ccc;
 }
+
 .col{
 	float: left;
 	width: 50%;
@@ -283,7 +309,9 @@ a.btn.order{background: #0091ea;}
 	border: 0;
 	padding: 3px 8px;
 }
+
 /*Box de alerta!*/
+
 .box-alert{
 	width: 100%;
 	padding:8px 0;
@@ -318,6 +346,7 @@ a.btn.order{background: #0091ea;}
 		Adicionar Seta para qd estiver selecionado.
 	*/
 }
+
 .form-group-login label{
 	font-size: 13px;
 	padding-right: 6px;
@@ -392,7 +421,35 @@ form .form-group-login:nth-of-type(2){
 	color: white;
 	padding: 3px 8px;
 }
-
+.busca{
+	width: 100%;
+	padding: 10px;	
+	margin: 10px 0;
+}
+.busca form{
+	margin: 0;
+}
+.busca h4{
+	color: black;
+	font-size: 23px;
+}
+.busca-result{
+	color: #646464;
+	border-top: 3px solid #ccc;
+}
+.busca-result p{
+	font-size: 15px;
+}
+.gerar-pdf{
+	margin-top: 12px;
+	display: block;
+}
+.gerar-pdf a{
+	background-color: #E05C4E;
+	color: white;
+	padding: 5px 8px;
+	text-decoration: none;		
+}
 @media screen and (max-width: 1024px){
 	.box-metrica-single{
 		width: 100%;
@@ -408,7 +465,7 @@ form .form-group-login:nth-of-type(2){
 		padding: 0;
 		display: none;
 	}
-	header{
+	section.crud{
 		width: 100%;
 		left: 0;
 	}
