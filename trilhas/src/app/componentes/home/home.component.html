@@ -1,3 +1,19 @@
+<header>
+    <div class="center">
+        <div class="logo" *ngFor="let log of logo"><a href="index.html">{{ log.logo }}</a></div>
+        <nav class="desktop">
+            <ul>
+                <li *ngFor="let menu of homemenu"><a href="#{{ menu.name }}">{{ menu.name }}</a></li>                                  
+            </ul>
+        </nav>
+        <nav class="mobile">
+            <i class="fa fa-bars"></i>
+            <ul>
+                <li *ngFor="let menu of homemenu"><a href="#{{ menu.name }}">{{ menu.name }}</a></li>                
+            </ul>
+        </nav>            
+    </div>
+</header>
 <section id="Home" class="banner">
     <div class="layer">
         <div class="center">
@@ -26,4 +42,76 @@
             </div>                
         </div>
     </div>        
-  </section>   
+</section>   
+<section id="Passeio" class="servicos">
+    <section class="servicos-title">
+        <div class="center">
+            <h1>Passeios</h1>
+        </div>
+    </section>
+    <div class="center">
+        <div class="box-planos-single" *ngFor="let passeio of homepasseio">
+            <div class="box-planos-wraper">
+                <h2>{{ passeio.title }}</h2>
+                <div class="img-trilha">
+                    <img [src]="passeio.img" />
+                </div>
+                <div class="pontos-plano">
+                    <p><i class="fa fa-check-square"></i> {{ passeio.encontro }}</p>
+                    <p><i class="fa fa-check-square"></i> Tempo: {{ passeio.tempo }}</p>
+                    <p><i class="fa fa-check-square"></i> Guia: {{ passeio.guia }}</p>
+                    <p><i class="fa fa-check-square"></i> Dia/Horário: {{ passeio.dia }}</p>
+                </div>
+                <div class="preco">
+                    <h2><a href="#">Quero participar!</a></h2>
+                </div>
+            </div>
+        </div>       
+    </div>
+  </section>       
+  <section id="Contato" class="fale-conosco">
+    <section class="servicos-title">
+        <div class="center">
+            <h1>Contato</h1>
+        </div>
+    </section>
+    <div class="center">
+        <div class="sobre-nos" *ngFor="let tex of contato">
+            <h1>{{ tex.titulo }}</h1>
+            <p>
+                {{ tex.texto }}
+            </p>
+        </div>
+        <div class="form">                
+            <form action="" method="POST" id="contactForm">
+                <input type="text" name="nome" id="nome" placeholder="Coloque o seu nome...">
+                <input type="text" name="email" id="email" placeholder="Coloque o seu email...">
+                <input type="text" name="assunto" id="assunto" placeholder="Assunto...">
+                <textarea name="mensagem" id="mensagem" placeholder="Coloque a sua mensagem..."></textarea>
+                <input type="submit" value="Enviar!">
+                <div id="sucesso" class="sucesso">Formulário enviado com sucesso.</div>
+                <div id="erro" class="erro">Sinto muito, a sua mensagem não foi enviada. Tente em outro instante!</div>
+            </form>
+        </div>
+    </div>
+  </section>    
+  <footer>
+    <section class="pre-footer">
+        <div class="center">
+            <div class="endereco">
+                <p>Rua São Lourenço - Niterói-RJ</p>
+            </div>
+            <div class="redes-sociais">
+                <span>Siga-nos:</span>
+                <a href="https://www.facebook.com/ludger.jeanlouis/" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/jeanludger/" target="_blank"><i class="fa fa-instagram"></i></a>                    
+            </div>
+        </div>
+    </section>
+    <section class="rodape">
+        <div class="center">
+            <p *ngFor="let log of logo">© 2021 | {{ log.logo }}</p>
+        </div>
+    </section>        
+  </footer>
+  

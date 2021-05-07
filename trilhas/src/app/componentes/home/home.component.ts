@@ -7,10 +7,32 @@ import { HomeService } from '../../services/home.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
+  // Menu
+  homemenu: any = [];
+  logo: any = [];
+
+  // Home
   conteudo: any = [];
+
+  // Passeio
+  homepasseio: any = []
+
+  // Contato
+  contato: any = [];
+
   constructor(homeServ: HomeService) {
+    // Menu
+    this.logo = homeServ.getLogo();
+    this.homemenu = homeServ.getMenu();
+
+    // Home
     this.conteudo = homeServ.getConteudo();
+
+    // Passeio
+    this.homepasseio = homeServ.getPasseio();
+
+    // Contato
+    this.contato = homeServ.getContato();
    }
 
   ngOnInit(): void {
