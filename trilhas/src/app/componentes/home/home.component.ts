@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   // Contato
   contato: any = [];
 
-  constructor(homeServ: HomeService) {
+  constructor(private homeServ: HomeService) {
     // Menu
     this.logo = homeServ.getLogo();
     this.homemenu = homeServ.getMenu();
@@ -36,7 +36,18 @@ export class HomeComponent implements OnInit {
    }
 
    onSubmit(formulario){
-    console.log(formulario.form.value);
+     if (formulario.form.status == 'INVALID') 
+       alert('Formulário inválido');
+
+      this.homeServ.postUsuario(formulario.form.value)
+      .subscribe(resposta => {
+        console.log(resposta);
+        alert('Você foi cadastrado com sucesso');
+      })
+      
+      //console.log(formulario.form.value);
+     
+    
   }
 
   ngOnInit(): void {
