@@ -7,4 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class CrudService {
 
   constructor(private http: HttpClient) { }
+
+  getUsuario(){
+    return this.http.get('');
+  }
 }

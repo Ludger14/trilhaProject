@@ -22,13 +22,14 @@
                 <p>{{ tex.texto }} <span>#vamoqvamo</span></p>
             </div>
             <div class="formulario">
-                <form action="" method="post" #cadastrar="ngForm" (ngSubmit)="onSubmit(cadastrar)">
+                <form action="" method="post" #cadastrar="ngForm" (ngSubmit)="onSubmit(cadastrar)" enctype="multipart/form-data">
                     <div id="sucesso" class="sucesso">Formulário enviado com sucesso.</div>
                     <div id="erro" class="erro">Sinto muito, a sua mensagem não foi enviada. Tente em outro instante!</div>                        
                     <input type="text" required name="nome" id="nome" placeholder="Coloque o seu nome..." ngModel>
                     <input type="text" required name="email" id="email" placeholder="Coloque o seu email..." ngModel>                                              
                     <input type="text" required name="telefone" id="telefone" placeholder="Coloque o seu número..." ngModel>
                     <select required name="passeio" id="passeio" ngModel>
+                        <option value="" disabled>Escolha o seu passeio...</option>
                         <option *ngFor="let passeio of homepasseio" value="{{ passeio.title }}">{{ passeio.title }}</option>                        
                     </select>
                     <button type="submit">Cadastrar!</button>                        
