@@ -9,6 +9,6 @@ export class CrudService {
   constructor(private http: HttpClient) { }
 
   getUsuario(){
-    return this.http.get('');
+    return this.http.get('http://localhost:8080/usuario');
   }
 }

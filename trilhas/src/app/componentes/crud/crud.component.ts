@@ -11,7 +11,7 @@ export class CrudComponent implements OnInit {
   usuario: any = {};
   constructor(private crudServ: CrudService) {
     crudServ.getUsuario().subscribe(usuario => {
-      this.usuario = usuario;
+      this.usuario = usuario['allUsers'];
       console.log(this.usuario);
     });
   }

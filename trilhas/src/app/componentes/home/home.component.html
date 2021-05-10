@@ -32,7 +32,8 @@
                         <option value="" disabled>Escolha o seu passeio...</option>
                         <option *ngFor="let passeio of homepasseio" value="{{ passeio.title }}">{{ passeio.title }}</option>                        
                     </select>
-                    <button type="submit">Cadastrar!</button>                        
+                    <button type="submit">Cadastrar!</button> 
+                    <!--<input type="hidden" name="redirect" value="http://localhost:4200/crud" /> -->                      
                 </form>
             </div>                
         </div>

@@ -102,7 +102,7 @@ export class HomeService {
   }*/
 
   postUsuario(dados){
-    return this.http.post('https://jsonplaceholder.typicode.com/users/', dados);
+    return this.http.post('http://localhost:8080/usuario', dados);
   }
 
   // Passeio
