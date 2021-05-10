@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-crud',
@@ -9,7 +10,7 @@ import { CrudService } from '../../services/crud.service';
 export class CrudComponent implements OnInit {
 
   usuario: any = {};
-  constructor(private crudServ: CrudService) {
+  constructor(private crudServ: CrudService, private route: ActivatedRoute, private router: Router) {
     crudServ.getUsuario().subscribe(usuario => {
       this.usuario = usuario['allUsers'];
       console.log(this.usuario);
@@ -17,6 +18,10 @@ export class CrudComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onVoltar() {
+    this.router.navigate([''])
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   // Contato
   contato: any = [];
 
-  constructor(private homeServ: HomeService) {
+  constructor(private homeServ: HomeService, private router: Router) {
     // Menu
     this.logo = homeServ.getLogo();
     this.homemenu = homeServ.getMenu();
@@ -43,6 +44,9 @@ export class HomeComponent implements OnInit {
       .subscribe(resposta => {
         console.log(resposta);
         alert('Você foi cadastrado com sucesso');
+        /// TODO: redirecionar pelo router
+        this.router.navigate(['/crud'])
+        //location.href = '/'
       })
       
       //console.log(formulario.form.value);
