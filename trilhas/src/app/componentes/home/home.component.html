@@ -20,12 +20,10 @@
             <div class="home" *ngFor="let tex of conteudo">
                 <h1>{{ tex.titulo }}</h1>
                 <p>{{ tex.texto }} <span>#vamoqvamo</span></p>
-            </div>
-            
+            </div>            
             <div class="formulario">                
                 <form action="" method="post" #cadastrar="ngForm" (ngSubmit)="onSubmit(cadastrar)" enctype="multipart/form-data">
-                    <div id="sucesso" class="sucesso">Formulário enviado com sucesso.</div>
-                    <div id="erro" class="erro">Campos vazios não são aceitos!</div> 
+                    
                     <div class="form-group">                       
                         <input type="text" rows="5" class="form-control" required name="nome" id="nome" placeholder="Coloque o seu nome..." ngModel>
                     </div>

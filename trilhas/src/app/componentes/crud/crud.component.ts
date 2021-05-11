@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -32,6 +32,10 @@ export class CrudComponent implements OnInit {
     this.usuario.splice(item-1,1)
     this.crudServ.onDelete(item).subscribe((result) => {
       console.warn("result",result)
+      this.crudServ.getUsuario().subscribe(usuario => {
+        this.usuario = usuario['allUsers'];
+        console.log(this.usuario);
+      });
     })
   }
   

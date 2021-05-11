@@ -15,4 +15,8 @@ export class CrudService {
   onDelete(id){
     return this.http.delete(`${this.url}/${id}`);
   }
+
+  putUsuario(dados, id){
+    return this.http.put(`${this.url}/${id}`, dados);
+  }
 }

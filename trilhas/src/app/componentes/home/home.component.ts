@@ -19,9 +19,7 @@ import { state, transition, trigger, animate, style } from '@angular/animations'
 export class HomeComponent implements OnInit {   
   // Menu
   homemenu: any = [];
-  logo: any = [];
-  sucesso: boolean = false;
-  erro: boolean = false;
+  logo: any = []; 
 
   // Home
   conteudo: any = [];

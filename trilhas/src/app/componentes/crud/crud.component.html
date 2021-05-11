@@ -45,8 +45,8 @@
                     <td>{{ user.email }}</td>
                     <td>{{ user.telefone }}</td>			
                     <td>{{ user.passeio }}</td>
-                    <td><a class="btn edit" href="#"><i class="fa fa-pencil"></i> Editar</a></td>
-                    <td><a (click)="onDelete(user.id)" class="btn delete" href=""><i class="fa fa-times"></i> Excluir</a></td>                    
+                    <td><a class="btn edit" routerLink="/update/{{user.id}}"><i class="fa fa-pencil"></i> Editar</a></td>
+                    <td><a (click)="onDelete(user.id)" class="btn delete"><i class="fa fa-times"></i> Excluir</a></td>                    
                 </tr>            
             </table>
         </div>        
