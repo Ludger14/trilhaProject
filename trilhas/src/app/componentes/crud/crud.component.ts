@@ -21,14 +21,18 @@ export class CrudComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.crudServ.getUsuario();
-    }
+    
   }
 
   onVoltar() {
     this.router.navigate([''])
+  }
+
+  onDelete(item){
+    this.usuario.splice(item-1,1)
+    this.crudServ.onDelete(item).subscribe((result) => {
+      console.warn("result",result)
+    })
   }
   
 }

@@ -372,6 +372,23 @@ section.fale-conosco > .center{
 .form form button:hover{
     background-color: #027e66;    
 }
+.ng-invalid.ng-touched:not(form){
+    border: 1px solid red;
+}
+.alert-success {    
+    margin: 20px 0;
+    padding: 0 5px;
+    text-align: center;
+}
+.alert-danger {    
+    margin: 20px 0;
+    padding: 2px 5px;
+    text-align: center;
+}
+.close{
+    padding: 0 2px;
+    margin: 0 10px;
+}
 @media screen and (max-width: 768px){
     ul{
         padding-left: 0;

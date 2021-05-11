@@ -5,14 +5,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CrudService {
-
+  url = "http://localhost:8080/usuario"
   constructor(private http: HttpClient) { }
 
   getUsuario(){
-    return this.http.get('http://localhost:8080/usuario');
+    return this.http.get(this.url);
   }
   
-  remove(id){
-    return this.http.delete('http://localhost:8080/usuario', id);
+  onDelete(id){
+    return this.http.delete(`${this.url}/${id}`);
   }
 }
