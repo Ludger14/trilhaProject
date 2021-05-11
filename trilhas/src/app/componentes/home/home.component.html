@@ -21,20 +21,41 @@
                 <h1>{{ tex.titulo }}</h1>
                 <p>{{ tex.texto }} <span>#vamoqvamo</span></p>
             </div>
-            <div class="formulario">
+            
+            <div class="formulario">                
                 <form action="" method="post" #cadastrar="ngForm" (ngSubmit)="onSubmit(cadastrar)" enctype="multipart/form-data">
                     <div id="sucesso" class="sucesso">Formulário enviado com sucesso.</div>
-                    <div id="erro" class="erro">Sinto muito, a sua mensagem não foi enviada. Tente em outro instante!</div>                        
-                    <input type="text" required name="nome" id="nome" placeholder="Coloque o seu nome..." ngModel>
-                    <input type="text" required name="email" id="email" placeholder="Coloque o seu email..." ngModel>                                              
-                    <input type="text" required name="telefone" id="telefone" placeholder="Coloque o seu número..." ngModel>
-                    <select required name="passeio" id="passeio" ngModel>
-                        <option value="" disabled>Escolha o seu passeio...</option>
-                        <option *ngFor="let passeio of homepasseio" value="{{ passeio.title }}">{{ passeio.title }}</option>                        
-                    </select>
+                    <div id="erro" class="erro">Campos vazios não são aceitos!</div> 
+                    <div class="form-group">                       
+                        <input type="text" rows="5" class="form-control" required name="nome" id="nome" placeholder="Coloque o seu nome..." ngModel>
+                    </div>
+                    <div class="form-group"> 
+                        <input type="text" rows="5" class="form-control" required name="email" id="email" placeholder="Coloque o seu email..." ngModel>                                              
+                    </div>
+                    <div class="form-group"> 
+                        <input type="text" rows="5" class="form-control" required name="telefone" id="telefone" placeholder="Coloque o seu número..." ngModel>
+                    </div>
+                    <div class="form-group"> 
+                        <select rows="5" class="form-control" required name="passeio" id="passeio" ngModel>
+                            <option value="" disabled>Escolha o seu passeio...</option>
+                            <option *ngFor="let passeio of homepasseio" value="{{ passeio.title }}">{{ passeio.title }}</option>                        
+                        </select>
+                    </div>
                     <button type="submit">Cadastrar!</button> 
-                    <!--<input type="hidden" name="redirect" value="http://localhost:4200/crud" /> -->                      
+                   <!-- <input type="hidden" name="redirect" value="http://localhost:4200/crud" /> -->                      
                 </form>
+                <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Seu formulário foi enviado com sucesso!</strong>
+                    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div *ngIf="alertD" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Seu formulário não foi enviado!</strong>
+                    <button (click)="closeAlertD()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
             </div>                
         </div>
     </div>        

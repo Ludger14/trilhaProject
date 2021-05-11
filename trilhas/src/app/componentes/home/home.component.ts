@@ -1,20 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 import { Router } from '@angular/router';
+import { state, transition, trigger, animate, style } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void <=> *', animate(3000)),
+    ]),    
+  ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit {   
   // Menu
   homemenu: any = [];
   logo: any = [];
+  sucesso: boolean = false;
+  erro: boolean = false;
 
   // Home
   conteudo: any = [];
-
+  alert: boolean = false;
+  alertD: boolean = false;
   // Passeio
   homepasseio: any = []
 
@@ -35,26 +47,31 @@ export class HomeComponent implements OnInit {
     // Contato
     this.contato = homeServ.getContato();
    }
-
+   
    onSubmit(formulario){
-     if (formulario.form.status == 'INVALID') 
-       alert('Formulário inválido');
-
+    if (formulario.form.status == 'INVALID') {
+      //alert('Formulário inválido');   
+      this.alertD = true;  
+      return false;
+    } else{
       this.homeServ.postUsuario(formulario.form.value)
       .subscribe(resposta => {
-        console.log(resposta);
-        alert('Você foi cadastrado com sucesso');
+        console.log(resposta);    
+        this.alert = true;           
+        formulario.form.reset({});        
         /// TODO: redirecionar pelo router
-        this.router.navigate(['/crud'])
-        //location.href = '/'
+        this.router.navigate(['/crud'])        
       })
-      
-      //console.log(formulario.form.value);
-     
-    
+    }   
   }
 
   ngOnInit(): void {
   }
-
+  closeAlert(){
+    this.alert = false;
+  }
+  closeAlertD(){
+    this.alertD = false;
+  }
+  
 }

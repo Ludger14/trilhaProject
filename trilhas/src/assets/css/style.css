@@ -5,7 +5,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 html, body{
-    height: 100%;
+    height: 100%;    
+}
+body{    
+    line-height: 1.1;
 }
 a{
     text-decoration: none;
@@ -81,7 +84,7 @@ nav{
 }
 nav ul{
     text-align: right;  
-    margin: 3px 0;  
+    margin: 2px 0;  
 }
 nav ul li{
     display: inline; 
@@ -94,6 +97,9 @@ nav ul li a{
 nav ul li:hover{
     background-color: #027e66;
     padding: 18px;
+}
+nav ul li:hover a{
+    color: white;
 }
 .redes-sociais{
     width: 15%;
@@ -233,6 +239,8 @@ section.servicos-title{
 	color: white;
 	padding: 10px;
 	font-weight: lighter;
+    font-size: 25px;
+    margin-bottom: 0;
 }
 .box-planos-single p{
 	color: #777777;
@@ -365,6 +373,9 @@ section.fale-conosco > .center{
     background-color: #027e66;    
 }
 @media screen and (max-width: 768px){
+    ul{
+        padding-left: 0;
+    }
     nav{
         width: 90%;
         text-align: right;

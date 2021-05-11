@@ -11,4 +11,8 @@ export class CrudService {
   getUsuario(){
     return this.http.get('http://localhost:8080/usuario');
   }
+  
+  remove(id){
+    return this.http.delete('http://localhost:8080/usuario', id);
+  }
 }

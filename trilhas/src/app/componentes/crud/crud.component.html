@@ -46,7 +46,7 @@
                     <td>{{ user.telefone }}</td>			
                     <td>{{ user.passeio }}</td>
                     <td><a class="btn edit" href="#"><i class="fa fa-pencil"></i> Editar</a></td>
-                    <td><a actionBtn="delete" class="btn delete" href="#"><i class="fa fa-times"></i> Excluir</a></td>                    
+                    <td><a actionBtn="delete" (click)="onDelete(user)" class="btn delete" href="#"><i class="fa fa-times"></i> Excluir</a></td>                    
                 </tr>            
             </table>
         </div>        

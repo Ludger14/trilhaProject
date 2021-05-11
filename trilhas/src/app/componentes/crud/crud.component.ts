@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -7,10 +7,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './crud.component.html',
   styleUrls: ['./crud.component.css']
 })
-export class CrudComponent implements OnInit {
+export class CrudComponent implements OnInit {  
 
   usuario: any = {};
-  constructor(private crudServ: CrudService, private route: ActivatedRoute, private router: Router) {
+
+  constructor(private crudServ: CrudService, 
+    private route: ActivatedRoute,
+    private router: Router) {
     crudServ.getUsuario().subscribe(usuario => {
       this.usuario = usuario['allUsers'];
       console.log(this.usuario);
@@ -18,10 +21,14 @@ export class CrudComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.crudServ.getUsuario();
+    }
   }
 
   onVoltar() {
     this.router.navigate([''])
   }
-
+  
 }
