@@ -18,13 +18,16 @@ export class HomeService {
   }];
 
   logo: any = [{
-    "logo": "Trilhas"
+    "logo": "Trilhas",
+    "cargo": "Administrador"
   }]
   // Home
   conteudo: any = [{
     "titulo": "Já trilhou hoje?",
     "texto": "Aos trilheiros de plantão, conheçam a cidade maravilhosa de um outro ângulo!!! Veja alguns de nossos principais roteiros."    
   }]
+  alert: boolean = false;
+  alertD: boolean = false;
   // Passeio
   homepasseio: any = [{
     "title": "Pedra Bonita",
@@ -95,7 +98,7 @@ export class HomeService {
   // Home
   getConteudo(){
     return this.conteudo;
-  }
+  }  
   /*
   getUsuario(){
     return this.http.get('https://jsonplaceholder.typicode.com/users/1');

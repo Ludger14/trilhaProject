@@ -208,6 +208,7 @@ table a.btn{
 a.btn.edit{background: #F4B03E;}
 a.btn.delete{background: #E05C4E;}
 a.btn.order{background: #0091ea;}
+a.btn.atualizar{background: #00bfa5;}
 
 /*Tabela Responsiva*/
 
@@ -298,7 +299,7 @@ a.btn.order{background: #0091ea;}
 	border: 1px solid #ccc;
 }
 
-.box-content form input[type=submit]{
+.box-content form button[type=submit]{
 	width: auto;
 	height: 40px;
 	cursor: pointer;

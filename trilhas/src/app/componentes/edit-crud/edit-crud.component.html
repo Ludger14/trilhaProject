@@ -4,9 +4,9 @@
             <div class="avatar-usuario">
                 <i class="fa fa-user"></i>
             </div>            
-            <div class="nome-usuario">
-                <p>Trilhas</p>
-                <p>Administrador</p>
+            <div class="nome-usuario" *ngFor="let log of logo">
+                <p>{{ log.logo }}</p>
+                <p>{{ log.cargo }}</p>
             </div>
         </div>
         <div class="itens-menu">
@@ -20,7 +20,7 @@
             <i class="fa fa-bars"></i>
         </div>
         <div class="logout">
-            <a style="background-color: #60727a; padding: 10px;" href="">
+            <a style="background-color: #60727a; padding: 10px;" (click)="onVoltar()">
                 <i class="fa fa-home"> Página inicial</i>
             </a>            
         </div>
@@ -31,7 +31,7 @@
     <div class="box-content">
         <h2><i class="fa fa-pencil"></i> Editar Cliente</h2>
         
-        <form #cadastrar="ngForm" enctype="multipart/form-data">
+        <form #atualizar="ngForm" (ngSubmit)="onSubmit(atualizar)" enctype="multipart/form-data">
                     
             <div class="form-group">                       
                 <input type="text" rows="5" class="form-control" required name="nome" id="nome" placeholder="Coloque o seu nome..." ngModel>
@@ -45,7 +45,7 @@
             <div class="form-group"> 
                 <select rows="5" class="form-control" required name="passeio" id="passeio" ngModel>
                     <option value="" disabled>Escolha o seu passeio...</option>
-                    <option value="">Passeios</option>                        
+                    <option *ngFor="let passeio of homepasseio" value="{{ passeio.title }}">{{ passeio.title }}</option>                        
                 </select>
             </div>
             <button type="submit">Atualizar!</button> 

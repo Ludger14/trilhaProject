@@ -7,7 +7,7 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent },
     { path: 'crud', component: CrudComponent },
-    { path: 'update/:id', component: EditCrudComponent }
+    { path: 'crud/update/:id', component: EditCrudComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

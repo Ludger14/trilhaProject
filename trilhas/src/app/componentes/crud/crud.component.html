@@ -4,9 +4,9 @@
             <div class="avatar-usuario">
                 <i class="fa fa-user"></i>
             </div>            
-            <div class="nome-usuario">
-                <p>Trilhas</p>
-                <p>Administrador</p>
+            <div class="nome-usuario" *ngFor="let log of logo">
+                <p>{{ log.logo }}</p>
+                <p>{{ log.cargo }}</p>
             </div>
         </div>
         <div class="itens-menu">
@@ -45,7 +45,7 @@
                     <td>{{ user.email }}</td>
                     <td>{{ user.telefone }}</td>			
                     <td>{{ user.passeio }}</td>
-                    <td><a class="btn edit" routerLink="/update/{{user.id}}"><i class="fa fa-pencil"></i> Editar</a></td>
+                    <td><a class="btn edit" routerLink="update/{{user.id}}"><i class="fa fa-pencil"></i> Editar</a></td>
                     <td><a (click)="onDelete(user.id)" class="btn delete"><i class="fa fa-times"></i> Excluir</a></td>                    
                 </tr>            
             </table>
