@@ -55,13 +55,13 @@ export class HomeComponent implements OnInit {
       this.homeServ.postUsuario(formulario.form.value)
       .subscribe(resposta => {
         console.log(resposta);    
-        this.alert = true;           
+        this.alert = true;                    
         formulario.form.reset({});        
         /// TODO: redirecionar pelo router
         this.router.navigate(['/crud'])        
       })
     }   
-  }
+  }  
 
   ngOnInit(): void {
   }

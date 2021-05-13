@@ -9,18 +9,10 @@ export class CrudService {
   constructor(private http: HttpClient) { }
 
   getUsuario(){
-    return this.http.get(this.url);
+    return this.http.get(this.url, {responseType: 'json'});
   }
   
   onDelete(id){
     return this.http.delete(`${this.url}/${id}`);
-  }
-
-  putUsuario(dados, id){
-    return this.http.put(`${this.url}/${id}`, dados);
-  }
-
-  getCurrentUser(id){
-    return this.http.get(`${this.url}/${id}`);
   }
 }

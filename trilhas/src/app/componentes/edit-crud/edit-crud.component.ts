@@ -11,11 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./edit-crud.component.css']
 })
 export class EditCrudComponent implements OnInit {   
-  //usuario: any = [];
+  usuario: any = [];
   // Passeio
   homepasseio: any = [];
-  alert: boolean = false;  
-  logo: any = {};
+  alert: boolean = false;
+  
+  logo: any = [];
 
   editUser = new FormGroup({
     nome: new FormControl(''),
@@ -35,7 +36,7 @@ export class EditCrudComponent implements OnInit {
     this.routs.navigate(['/crud'])
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {        
     //console.warn(this.router.snapshot.params.id)
     this.editServ.getCurrentUser(this.router.snapshot.params.id)
     .subscribe((result) => {
@@ -50,6 +51,8 @@ export class EditCrudComponent implements OnInit {
   atualizar(){
     console.log(this.editUser.value);
     this.editServ.putUsuario(this.router.snapshot.params.id, this.editUser.value).subscribe((result)=>{
+      result = JSON.parse(JSON.stringify(result));
+      console.log(result)
       this.alert=true;
     })
   }
