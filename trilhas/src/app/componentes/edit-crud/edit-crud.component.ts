@@ -1,54 +1,60 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { EditService } from '../../services/edit.service';
 import { HomeService } from '../../services/home.service';
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-edit-crud',
   templateUrl: './edit-crud.component.html',
   styleUrls: ['./edit-crud.component.css']
 })
-export class EditCrudComponent implements OnInit {
+export class EditCrudComponent implements OnInit {   
   //usuario: any = [];
   // Passeio
   homepasseio: any = [];
-  alert: boolean = false;
-  alertD: boolean = false;
+  alert: boolean = false;  
   logo: any = {};
-  constructor(private homeServ: HomeService, private editServ: EditService, private route: ActivatedRoute,
+
+  editUser = new FormGroup({
+    nome: new FormControl(''),
+    email: new FormControl(''),
+    telefone: new FormControl(''),
+    passeio: new FormControl('')
+  })
+  constructor(private homeServ: HomeService, private editServ: EditService,
     private router: ActivatedRoute, private routs: Router) { 
     // Passeio
     this.homepasseio = homeServ.getPasseio();
     this.logo = homeServ.getLogo();   
   }
-
-  onSubmit(formulario){
-    if (formulario.form.status == 'INVALID') {
-      //alert('Formulário inválido');   
-      this.alertD = true;  
-      return false;
-    } else{
-      this.editServ.putUsuario(this.router.snapshot.params.id, formulario.form.value)
-      .subscribe((resposta) => {
-        console.warn("resposta",resposta);    
-        this.alert = true;                
-        // TODO: redirecionar pelo router
-        this.routs.navigate(['/crud'])        
-      })
-    }   
-  }
-
+  
+  // TODO: redirecionar pelo router
   onVoltar() {
-    this.routs.navigate(['/'])
+    this.routs.navigate(['/crud'])
   }
 
-  ngOnInit(): void {
-    console.warn(this.router.snapshot.params.id)
+  ngOnInit(): void { 
+    //console.warn(this.router.snapshot.params.id)
+    this.editServ.getCurrentUser(this.router.snapshot.params.id)
+    .subscribe((result) => {
+      this.editUser = new FormGroup({
+        nome: new FormControl(result['nome']),
+        email: new FormControl(result['email']),
+        telefone: new FormControl(result['telefone']),
+        passeio: new FormControl(result['passeio'])
+      })
+    })    
   }  
+  atualizar(){
+    console.log(this.editUser.value);
+    this.editServ.putUsuario(this.router.snapshot.params.id, this.editUser.value).subscribe((result)=>{
+      this.alert=true;
+    })
+  }
   closeAlert(){
     this.alert = false;
   }
-  closeAlertD(){
-    this.alertD = false;
-  }
+  
 }

@@ -13,4 +13,8 @@ export class EditService {
   putUsuario(id, dados){
     return this.http.put(`${this.url}/${id}`, dados);
   }
+
+  getCurrentUser(id){
+    return this.http.get(`${this.url}/${id}`);
+  }
 }

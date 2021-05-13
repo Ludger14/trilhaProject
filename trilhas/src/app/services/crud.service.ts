@@ -19,4 +19,8 @@ export class CrudService {
   putUsuario(dados, id){
     return this.http.put(`${this.url}/${id}`, dados);
   }
+
+  getCurrentUser(id){
+    return this.http.get(`${this.url}/${id}`);
+  }
 }
