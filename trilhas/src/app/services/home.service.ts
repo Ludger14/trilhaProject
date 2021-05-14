@@ -84,6 +84,19 @@ export class HomeService {
     "texto": "Leve a família e chame os amigos para participar nessa viagem perto da natureza e sentir aquela energia das árvores. A Trilhas disponibiliza um guia, mapa e muitos outros acessórios para um passeio seguro e confortável."
   }]
 
+  equipe: any = [{
+    "nome": "Ludger Jean Louis",
+    "foto": "../assets/img/Ludger.jpg",
+    "profissao": "Desenvolvedor FullStack",
+    "descricao": "Possui mais de 5 anos na criação e manutenção de projetos de websites no mercado. Atualmente é desenvolvedor Fullstack."
+  },
+  {
+    "nome": "Grevisse Mulamba",
+    "foto": "../assets/img/grevisse.jpg",
+    "profissao": "Desenvolvedor FullStack",
+    "descricao": "Graduado em Ciências de computação pela Universidade de Kinshasa. Atualmente é desenvolvedor Fullstack pelo Toti."
+  }]
+
   constructor(private http: HttpClient) { }
 
   // Menu
@@ -116,5 +129,9 @@ export class HomeService {
   // Contato
   getContato(){
     return this.contato;
+  }
+  // Contato
+  getEquipe(){
+    return this.equipe;
   }
 }

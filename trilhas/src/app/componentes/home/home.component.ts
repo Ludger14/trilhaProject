@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   // Contato
   contato: any = [];
-
+  equipe: any = [];
   constructor(private homeServ: HomeService, private router: Router) {
     // Menu
     this.logo = homeServ.getLogo();
@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
 
     // Contato
     this.contato = homeServ.getContato();
+    this.equipe = homeServ.getEquipe();
    }
    
    onSubmit(formulario){

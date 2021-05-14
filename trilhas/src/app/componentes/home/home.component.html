@@ -98,15 +98,22 @@
             </p>
         </div>
         <div class="form">                
-            <form action="" method="POST" id="contactForm">
-                <input type="text" name="nome" id="nome" placeholder="Coloque o seu nome...">
-                <input type="text" name="email" id="email" placeholder="Coloque o seu email...">
-                <input type="text" name="assunto" id="assunto" placeholder="Assunto...">
-                <textarea name="mensagem" id="mensagem" placeholder="Coloque a sua mensagem..."></textarea>
-                <input type="submit" value="Enviar!">
-                <div id="sucesso" class="sucesso">Formulário enviado com sucesso.</div>
-                <div id="erro" class="erro">Sinto muito, a sua mensagem não foi enviada. Tente em outro instante!</div>
-            </form>
+            <div class="w50" *ngFor="let eq of equipe">
+                <div class="w50-wrapper">
+                    <div class="img-title">
+                        <div class="foto">
+                            <img [src]="eq.foto" />
+                        </div>
+                        <div class="title">
+                            <h3>{{ eq.nome }}</h3>
+                            <h4>{{ eq.profissao }}</h4>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>{{ eq.descricao }}</p>
+                    </div>
+                </div>
+            </div>              
         </div>
     </div>
   </section>    
