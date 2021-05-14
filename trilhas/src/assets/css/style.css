@@ -290,6 +290,7 @@ section.servicos-title{
 }
 .endereco p{
     color: white;
+    margin-bottom: 0;
 }
 .rodape{
     width: 100%;
@@ -299,6 +300,7 @@ section.servicos-title{
 }
 .rodape p{
     color: white;
+    margin-bottom: 0;
 }
 section.fale-conosco{
     background-color: rgba(200,200,200, .3);
