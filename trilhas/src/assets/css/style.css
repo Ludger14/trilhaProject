@@ -335,13 +335,19 @@ section.fale-conosco > .center{
 }
 .alert-success {    
     margin: 20px 0;
-    padding: 0 5px;
-    text-align: center;
+    padding: 15px 2%;	
+	color: #56b700;
+	background-color: #dff2bf;
+	font-weight: normal;
+	font-size: 14px;
 }
 .alert-danger {    
     margin: 20px 0;
-    padding: 2px 5px;
-    text-align: center;
+    padding: 15px 2%;	
+	color: #921e1e;
+	background-color: #f1c3c3;
+	font-weight: normal;
+	font-size: 14px;
 }
 .close{
     padding: 0 2px;

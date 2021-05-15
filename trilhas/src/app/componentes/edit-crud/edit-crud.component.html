@@ -30,7 +30,12 @@
 <div class="content">
     <div class="box-content">
         <h2><i class="fa fa-pencil"></i> Editar Cliente</h2>
-               
+        <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Esse usuário foi atualizado com sucesso!</strong>
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>       
         <form [formGroup]="editUser" (ngSubmit)="atualizar()">  
             <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>O formulário foi alterado com sucesso!</strong>

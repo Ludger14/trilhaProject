@@ -14,8 +14,7 @@ export class EditCrudComponent implements OnInit {
   usuario: any = [];
   // Passeio
   homepasseio: any = [];
-  alert: boolean = false;
-  
+  alert: boolean = false;  
   logo: any = [];
 
   editUser = new FormGroup({

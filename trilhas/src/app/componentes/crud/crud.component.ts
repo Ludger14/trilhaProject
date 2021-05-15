@@ -40,6 +40,7 @@ export class CrudComponent implements OnInit {
       if (podeDeletar) {
         this.crudServ.onDelete(item).subscribe((result) => {
           console.warn("result",result)
+          this.alert = true;
           this.crudServ.getUsuario().subscribe(usuario => {
             this.usuario = usuario['allUsers'];
             console.log(this.usuario);
