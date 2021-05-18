@@ -48,20 +48,7 @@ function resetarCampoInvalido(el){
 function verificarNome(nome){
     if (nome == '') {
         return false;
-    }
-    /*let amount = nome.split(' ').length;
-    let spliStr = nome.split(' ');
-    if (amount >= 2) {
-        for (let i = 0; i < amount; i++) {
-            if (spliStr[i].match(/^[A-Z]{1}[a-z]{1,}$/)) {
-                
-            } else {
-                return false;
-            }            
-        }
-    } else {
-        return false;
-    }*/
+    }    
 }
 function verificarEmail(email){
     if (email == '') {

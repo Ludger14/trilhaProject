@@ -14,7 +14,8 @@ export class EditCrudComponent implements OnInit {
   usuario: any = [];
   // Passeio
   homepasseio: any = [];
-  alert: boolean = false;  
+  alert: boolean = false; 
+  alertD: boolean = false;  
   logo: any = [];
 
   editUser = new FormGroup({
@@ -39,6 +40,7 @@ export class EditCrudComponent implements OnInit {
     //console.warn(this.router.snapshot.params.id)
     this.editServ.getCurrentUser(this.router.snapshot.params.id)
     .subscribe((result) => {
+      console.log(result);
       this.editUser = new FormGroup({
         nome: new FormControl(result['nome']),
         email: new FormControl(result['email']),
@@ -47,16 +49,27 @@ export class EditCrudComponent implements OnInit {
       })
     })    
   }  
-  atualizar(){
-    console.log(this.editUser.value);
-    this.editServ.putUsuario(this.router.snapshot.params.id, this.editUser.value).subscribe((result)=>{
-      result = JSON.parse(JSON.stringify(result));
-      console.log(result)
-      this.alert=true;
-    })
+  atualizar(atualizarForm){  
+    if (atualizarForm.form.status == 'INVALID') {
+      //alert('Formulário inválido');   
+      this.alertD = true;  
+      return false;
+    } else{
+      console.log(this.editUser.value);
+      this.editServ.putUsuario(this.router.snapshot.params.id, this.editUser.value).subscribe((result)=>{
+        result = JSON.parse(JSON.stringify(result));
+        console.log(result)
+        this.alert=true;
+      })
+    }  
+   
   }
   closeAlert(){
     this.alert = false;
+    this.routs.navigate(['/crud'])
+  }
+  closeAlertD(){
+    this.alertD = false;   
   }
   
 }

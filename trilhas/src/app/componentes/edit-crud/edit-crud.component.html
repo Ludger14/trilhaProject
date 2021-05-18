@@ -35,25 +35,25 @@
             <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
+        </div>
+        <div *ngIf="alertD" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Campos vazios não são aceitos!</strong>
+            <button (click)="closeAlertD()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
         </div>       
-        <form [formGroup]="editUser" (ngSubmit)="atualizar()">  
-            <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>O formulário foi alterado com sucesso!</strong>
-                <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>                   
+        <form [formGroup]="editUser" #atualizarForm="ngForm" (ngSubmit)="atualizar(atualizarForm)">                                
             <div class="form-group">                       
-                <input type="text" rows="5" class="form-control" required name="nome" id="nome" placeholder="Coloque o seu nome..." formControlName="nome">
+                <input type="text" rows="5" class="form-control" required name="nome" id="nome" placeholder="Coloque o seu nome..." formControlName="nome" ngModel>
             </div>
             <div class="form-group"> 
-                <input type="text" rows="5" class="form-control" required name="email" id="email" placeholder="Coloque o seu email..." formControlName="email">                                              
+                <input type="text" rows="5" class="form-control" required name="email" id="email" placeholder="Coloque o seu email..." formControlName="email" ngModel>                                              
             </div>
             <div class="form-group"> 
-                <input type="text" rows="5" class="form-control" required name="telefone" id="telefone" placeholder="Coloque o seu número..." formControlName="telefone">
+                <input type="text" rows="5" class="form-control" required name="telefone" id="telefone" placeholder="Coloque o seu número..." formControlName="telefone" ngModel>
             </div>
             <div class="form-group"> 
-                <select rows="5" class="form-control" required name="passeio" id="passeio" formControlName="passeio">
+                <select rows="5" class="form-control" required name="passeio" id="passeio" formControlName="passeio" ngModel>
                     <option value="" disabled>Escolha o seu passeio...</option>
                     <option *ngFor="let passeio of homepasseio" value="{{ passeio.title }}">{{ passeio.title }}</option>                        
                 </select>
