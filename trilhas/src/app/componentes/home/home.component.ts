@@ -60,14 +60,15 @@ export class HomeComponent implements OnInit {
         formulario.form.reset({});            
       })      
     }
-    // TODO: redirecionar pelo router
-    this.router.navigate(['/crud'])      
+          
   }  
 
   ngOnInit(): void {
   }
   closeAlert(){
     this.alert = false;
+    // TODO: redirecionar pelo router
+    this.router.navigate(['/crud'])
   }
   closeAlertD(){
     this.alertD = false;

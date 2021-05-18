@@ -42,8 +42,14 @@
                     <button type="submit">Cadastrar!</button> 
                    <!-- <input type="hidden" name="redirect" value="http://localhost:4200/crud" /> -->                      
                 </form>
+                <!--<div *ngIf="alert" class="alert alert-success fade show" role="alert">
+                    Seu formulário foi enviado com sucesso!
+                </div>
+                <div *ngIf="alertD" class="alert alert-danger fade show" role="alert">
+                    Campos vazios não são aceitos!
+                </div>-->
                 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Seu formulário foi enviado com sucesso!</strong>
+                    <strong>Seu cadastro foi realizado com sucesso!</strong>
                     <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>

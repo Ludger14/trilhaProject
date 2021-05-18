@@ -6,7 +6,7 @@
 }
 html,body{
 	height: 100%;
-	background-color: rgba(200,200,200, .3);
+	background-color: white;
 }
 body{
 	overflow-x: hidden;
@@ -58,6 +58,9 @@ section.crud{
 	padding: 0 20px;
 	position: relative;
 	top: 0;
+}
+.logout a:hover{
+	color: white;	
 }
 .menu-btn{
 	float: left;
@@ -129,7 +132,7 @@ div.box-usuario{
 	position: relative;
 	left: 250px;
 	width: calc(100% - 250px);
-	padding: 2%;	
+	/*padding: 2%;*/	
 }
 .box-content{	
 	background-color: white;

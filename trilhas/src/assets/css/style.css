@@ -78,13 +78,18 @@ header > .center{
     font-size: 25px;
     text-transform: uppercase;
     font-weight: bold;
+    text-decoration: none;
+}
+.logo a:hover{
+    color: white;    
 }
 nav{
     width: 90%;
 }
 nav ul{
     text-align: right;  
-    margin: 2px 0;  
+    margin: 2px 0; 
+    padding-left: 0; 
 }
 nav ul li{
     display: inline; 
@@ -92,11 +97,12 @@ nav ul li{
 }
 nav ul li a{
     color: white;
-    font-size: 17px;    
+    font-size: 17px;  
+    text-decoration: none;  
 }
 nav ul li:hover{
     background-color: #027e66;
-    padding: 18px;
+    padding: 24px;
 }
 nav ul li:hover a{
     color: white;
@@ -189,7 +195,7 @@ section.banner{
     border: 0;
     font-size: 17px;
     cursor: pointer;
-    margin: auto;
+    margin: 12px auto;
 }
 .formulario form input[type=submit]:hover{
     background-color: #027e66;    
