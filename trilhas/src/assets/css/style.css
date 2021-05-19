@@ -345,7 +345,7 @@ section.fale-conosco > .center{
 	color: #56b700;
 	background-color: #dff2bf;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 12px;
 }
 .alert-danger {    
     margin: 20px 0;
@@ -353,7 +353,7 @@ section.fale-conosco > .center{
 	color: #921e1e;
 	background-color: #f1c3c3;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 12px;
 }
 .close{
     padding: 0 2px;
