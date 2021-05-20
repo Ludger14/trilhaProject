@@ -116,6 +116,9 @@ nav ul li:hover a{
     font-size: 17px;
     padding: 0 5px;    
 }
+.redes-sociais a:hover{
+    color: white;
+}
 .redes-sociais span{
     color: white;    
 }
