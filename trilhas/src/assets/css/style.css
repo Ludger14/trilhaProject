@@ -339,9 +339,19 @@ section.fale-conosco > .center{
 .ng-invalid.ng-touched:not(form){
     border: 1px solid red;
 }
+.alert{
+    display: flex;
+    flex-direction: row;
+}
+.alert strong{
+    width: 95%;
+}
+.alert button{
+    width: 5%;
+}
 .alert-success {    
     margin: 20px 0;
-    padding: 15px 2%;	
+    padding: 15px 0;	
 	color: #56b700;
 	background-color: #dff2bf;
 	font-weight: normal;
@@ -349,15 +359,18 @@ section.fale-conosco > .center{
 }
 .alert-danger {    
     margin: 20px 0;
-    padding: 15px 2%;	
+    padding: 15px 0;	
 	color: #921e1e;
 	background-color: #f1c3c3;
 	font-weight: normal;
 	font-size: 12px;
 }
+.alert-dismissible {
+    padding-right: 0 !important;
+}
 .close{
-    padding: 0 2px;
-    margin: 0 10px;
+    padding: 0 2px; 
+    margin: 0 10px;   
 }
 .w50{
     width: 50%;    
