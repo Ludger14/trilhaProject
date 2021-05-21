@@ -112,10 +112,7 @@ export class HomeService {
   getConteudo(){
     return this.conteudo;
   }  
-  /*
-  getUsuario(){
-    return this.http.get('https://jsonplaceholder.typicode.com/users/1');
-  }*/
+  
 
   postUsuario(dados){
     return this.http.post('http://localhost:8080/usuario', dados);

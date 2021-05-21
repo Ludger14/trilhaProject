@@ -1,6 +1,6 @@
 <header>
     <div class="center">
-        <div class="logo" *ngFor="let log of logo"><a href="index.html">{{ log.logo }}</a></div>
+        <div class="logo" *ngFor="let log of logo"><a routerLink="">{{ log.logo }}</a></div>
         <nav class="desktop">
             <ul>
                 <li *ngFor="let menu of homemenu"><a href="#{{ menu.name }}">{{ menu.name }}</a></li>                                  
@@ -39,15 +39,8 @@
                             <option *ngFor="let passeio of homepasseio" value="{{ passeio.title }}">{{ passeio.title }}</option>                        
                         </select>
                     </div>
-                    <button type="submit">Cadastrar!</button> 
-                   <!-- <input type="hidden" name="redirect" value="http://localhost:4200/crud" /> -->                      
-                </form>
-                <!--<div *ngIf="alert" class="alert alert-success fade show" role="alert">
-                    Seu formulário foi enviado com sucesso!
-                </div>
-                <div *ngIf="alertD" class="alert alert-danger fade show" role="alert">
-                    Campos vazios não são aceitos!
-                </div>-->
+                    <button type="submit">Cadastrar!</button>                                         
+                </form>               
                 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Seu cadastro foi realizado com sucesso!</strong>
                     <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
