@@ -16,12 +16,12 @@ export class EditarPasseioComponent implements OnInit {
   logo: any = [];
 
   editPasseio = new FormGroup({
-    title: new FormControl(''),
-    //imagem: new FormControl(''),
+    title: new FormControl(''),    
     encontro: new FormControl(''),
     tempo: new FormControl(''),
     dia: new FormControl(''),
-    guia: new FormControl('')
+    guia: new FormControl(''),
+    imagem: new FormControl('')
   })
   constructor(private homeServ: HomeService, private passeioServ: PasseioService,
     private router: ActivatedRoute, private routs: Router) {
@@ -34,12 +34,12 @@ export class EditarPasseioComponent implements OnInit {
     .subscribe((result) => {
       console.log(result);
       this.editPasseio = new FormGroup({
-        title: new FormControl(result['title']),
-        //imagem: new FormControl(result['imagem']),
+        title: new FormControl(result['title']),        
         encontro: new FormControl(result['encontro']),
         tempo: new FormControl(result['tempo']),
         dia: new FormControl(result['dia']),
-        guia: new FormControl(result['guia'])
+        guia: new FormControl(result['guia']),
+        imagem: new FormControl(result['imagem'])
       })
     })  
   }

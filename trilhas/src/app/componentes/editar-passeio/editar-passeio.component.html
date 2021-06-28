@@ -49,12 +49,7 @@
             <div class="form-group">
                 <label>Nome do Passeio:</label>                       
                 <input type="text" rows="5" class="form-control" required name="title" id="title" formControlName="title" ngModel>
-            </div>
-            <!--
-            <div class="form-group">
-                <label>Imagem:</label>
-                <input class="form-control" required type="file" name="imagem" id="imagem" formControlName="imagem" ngModel>			
-            </div>-->
+            </div>            
             <div class="form-group"> 
                 <label>Ponto de Encontro:</label>
                 <input type="text" rows="5" class="form-control" required name="encontro" id="encontro" formControlName="encontro" ngModel>                                              
@@ -70,7 +65,11 @@
             <div class="form-group">
                 <label>Guia:</label> 
                 <input type="text" rows="5" class="form-control" required name="guia" id="guia" formControlName="guia" ngModel>
-            </div>            
+            </div>             
+            <div class="form-group">
+                <label>Imagem:</label>
+                <input class="form-control" required type="file" name="imagem" id="imagem" formControlName="imagem" ngModel>			
+            </div>          
             <button type="submit">Atualizar!</button>                             
         </form>
     </div>
