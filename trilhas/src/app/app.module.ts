@@ -10,9 +10,11 @@ import { ComponentesModule } from './componentes/componentes.module';
 
 
 
+
+
 @NgModule({
   declarations: [
-    AppComponent,           
+    AppComponent,                       
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import { ComponentesModule } from './componentes/componentes.module';
     FormsModule,
     ComponentesModule,
     routing,
-    HttpClientModule,    
+    HttpClientModule,        
   ],
   providers: [],
   bootstrap: [AppComponent]

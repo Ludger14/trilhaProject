@@ -36,7 +36,7 @@
                     <div class="form-group"> 
                         <select rows="5" class="form-control" required name="passeio" id="passeio" ngModel>
                             <option value="" disabled>Escolha o seu passeio...</option>
-                            <option *ngFor="let passeio of homepasseio" value="{{ passeio.title }}">{{ passeio.title }}</option>                        
+                            <option *ngFor="let pass of passeio" value="{{ pass.title }}">{{ pass.title }}</option>                        
                         </select>
                     </div>
                     <button type="submit">Cadastrar!</button>                                         
@@ -64,23 +64,37 @@
         </div>
     </section>
     <div class="center">
-        <div class="box-planos-single" *ngFor="let passeio of homepasseio">
+        <div class="box-planos-single" *ngFor="let pass of passeio">
             <div class="box-planos-wraper">
-                <h2>{{ passeio.title }}</h2>
+                <h2>{{ pass.title }}</h2>
+            
                 <div class="img-trilha">
-                    <img [src]="passeio.img" />
+                    <img [src]="'/assets/img/'+pass.imagem" />
                 </div>
                 <div class="pontos-plano">
-                    <p><i class="fa fa-check-square"></i> {{ passeio.encontro }}</p>
-                    <p><i class="fa fa-check-square"></i> Tempo: {{ passeio.tempo }}</p>
-                    <p><i class="fa fa-check-square"></i> Guia: {{ passeio.guia }}</p>
-                    <p><i class="fa fa-check-square"></i> Dia/Horário: {{ passeio.dia }}</p>
+                    <p><i class="fa fa-check-square"></i> Encontro: {{ pass.encontro }}</p>
+                    <p><i class="fa fa-check-square"></i> Tempo: {{ pass.tempo }}</p>                    
+                    <p><i class="fa fa-check-square"></i> Dia/Horário: {{ pass.dia }}</p>
+                    <p><i class="fa fa-check-square"></i> Guia: {{ pass.guia }}</p>
                 </div>
                 <div class="preco">
                     <h2><a href="#">Quero participar!</a></h2>
                 </div>
             </div>
-        </div>       
+        </div>
+        <!--
+        <div class="box-planos-single">
+            <div class="box-planos-wraper">
+                <h2>Adicionar Passeio</h2>                
+                <div class="pontos-plano">
+                    <div class="addPasseio"><a routerLink="/adicionar-passeio"><i class="fa fa-plus"></i></a></div>
+                </div>
+                <div class="preco">
+                    <h2><a href="#">Quero participar!</a></h2>
+                </div>
+            </div>
+        </div>
+        -->
     </div>
   </section>       
   <section id="Contato" class="fale-conosco">

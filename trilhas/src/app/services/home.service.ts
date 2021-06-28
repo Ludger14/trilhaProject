@@ -34,7 +34,7 @@ export class HomeService {
     "img": "../assets/img/pedrabonita.jpg",
     "encontro": "Floresta da Tijuca",
     "tempo": "25-35 minutos",
-    "tuia": "Felipe",
+    "guia": "Felipe",
     "dia": "Sábado - 10h"
  },
  {
@@ -91,10 +91,10 @@ export class HomeService {
     "descricao": "Possui mais de 5 anos na criação e manutenção de projetos de websites no mercado. Atualmente é desenvolvedor Fullstack."
   },
   {
-    "nome": "Grevisse Mulamba",
-    "foto": "../assets/img/grevisse.jpg",
-    "profissao": "Desenvolvedor FullStack",
-    "descricao": "Graduado em Ciências de computação pela Universidade de Kinshasa. Atualmente é desenvolvedor Fullstack pelo Toti."
+    "nome": "Ernesto El Che",
+    "foto": "../assets/img/ernesto.jpg",
+    "profissao": "Guia de turismo",
+    "descricao": "Graduado em Ciências Econômicas pela Université d'Etat d'Haiti. Atualmente faz divulgação de viagens, eventos e atividades de lazer."
   }]
 
   constructor(private http: HttpClient) { }

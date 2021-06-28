@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
+import { PasseioService } from '../../services/passeio.service';
 import { Router } from '@angular/router';
 import { state, transition, trigger, animate, style } from '@angular/animations';
 
@@ -26,12 +27,12 @@ export class HomeComponent implements OnInit {
   alert: boolean = false;
   alertD: boolean = false;
   // Passeio
-  homepasseio: any = []
+  passeio: any = [];
 
   // Contato
   contato: any = [];
   equipe: any = [];
-  constructor(private homeServ: HomeService, private router: Router) {
+  constructor(private homeServ: HomeService, private router: Router, private passeioServ: PasseioService) {
     // Menu
     this.logo = homeServ.getLogo();
     this.homemenu = homeServ.getMenu();
@@ -40,7 +41,10 @@ export class HomeComponent implements OnInit {
     this.conteudo = homeServ.getConteudo();
 
     // Passeio
-    this.homepasseio = homeServ.getPasseio();
+    passeioServ.getPasseio().subscribe(passeio => {
+      this.passeio = passeio['allWalks'];
+      console.log(this.passeio);
+    });
 
     // Contato
     this.contato = homeServ.getContato();

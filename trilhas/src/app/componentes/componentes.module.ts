@@ -10,13 +10,18 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { EditCrudComponent } from './edit-crud/edit-crud.component';
 import { routing } from '../app.routing';
 import { RouterModule } from '@angular/router';
-
+import { PasseioComponent } from './passeio/passeio.component';
+import { ListarPasseioComponent } from './listar-passeio/listar-passeio.component';
+import { EditarPasseioComponent } from './editar-passeio/editar-passeio.component';
 
 @NgModule({
   declarations: [    
     HomeComponent,    
     CrudComponent,
     EditCrudComponent,
+    PasseioComponent,
+    ListarPasseioComponent,
+    EditarPasseioComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +36,9 @@ import { RouterModule } from '@angular/router';
     HomeComponent,    
     CrudComponent,
     EditCrudComponent,
+    PasseioComponent,
+    ListarPasseioComponent,
+    EditarPasseioComponent,
   ]
 })
 export class ComponentesModule { }
