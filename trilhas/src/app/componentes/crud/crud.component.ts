@@ -19,28 +19,17 @@ export class CrudComponent implements OnInit {
   constructor(private crudServ: CrudService, private homeServ: HomeService,
     private route: ActivatedRoute, private dialogConfirmServ: DialogconfirmService,
     private router: Router) {
-    /*crudServ.getUsuario().subscribe(usuario => {
+    crudServ.getUsuario().subscribe(usuario => {
       this.usuario = usuario['allUsers'];
       console.log(this.usuario);
-    });*/
+    });
     this.logo = homeServ.getLogo();    
   }
 
   ngOnInit(): void {
-    this.crudServ.getUsuario().subscribe(usuario => {
-      this.usuario = usuario['allUsers'];
-      console.log(this.usuario);
-    });
+    
   }
-  search(form){
-    if (this.busca == "") {
-      this.ngOnInit();
-    } else {
-      this.usuario = this.usuario.filter(res =>{
-        return res.busca.toLocaleLowerCase().match(this.busca.toLocaleLowerCase());
-      });
-    }
-  }
+  
   onVoltar() {
     this.router.navigate([''])
   }
