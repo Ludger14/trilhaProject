@@ -457,6 +457,9 @@ section.fale-conosco > .center{
     font-size: 17px;
     font-weight: lighter;    
 }
+.form-group{
+    margin-bottom: 0;
+}
 @media screen and (max-width: 768px){
     ul{
         padding-left: 0;

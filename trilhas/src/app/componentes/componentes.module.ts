@@ -13,6 +13,11 @@ import { RouterModule } from '@angular/router';
 import { PasseioComponent } from './passeio/passeio.component';
 import { ListarPasseioComponent } from './listar-passeio/listar-passeio.component';
 import { EditarPasseioComponent } from './editar-passeio/editar-passeio.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { UserFilterPipe } from './crud/user-filter.pipe';
+//import { AgePipe } from 'age-pipe';
 
 @NgModule({
   declarations: [    
@@ -22,6 +27,7 @@ import { EditarPasseioComponent } from './editar-passeio/editar-passeio.componen
     PasseioComponent,
     ListarPasseioComponent,
     EditarPasseioComponent,
+    UserFilterPipe,
   ],
   imports: [
     CommonModule,
@@ -30,7 +36,10 @@ import { EditarPasseioComponent } from './editar-passeio/editar-passeio.componen
     BrowserAnimationsModule,
     ModalModule,
     routing,  
-    RouterModule,         
+    RouterModule,   
+    Ng2SearchPipeModule,     
+    Ng2OrderModule,
+    NgxPaginationModule, 
   ],
   exports: [    
     HomeComponent,    

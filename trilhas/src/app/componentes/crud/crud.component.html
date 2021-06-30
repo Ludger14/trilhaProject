@@ -39,6 +39,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
         </div>
+        <div class="busca">
+            <h4><i class="fa fa-search"></i> Realizar uma busca</h4>
+            <div class="form-group">
+                <input class="form-control" type="text" name="busca" [(ngModel)]="busca" placeholder="Procure pelo nome do usuário...">
+            </div>            
+        </div>
         <div class="wraper-table">
             <table>
                 <tr>
@@ -49,7 +55,7 @@
                     <td>Editar</td>
                     <td>Excluir</td>
                 </tr>                
-                <tr *ngFor="let user of usuario">
+                <tr *ngFor="let user of usuario | userFilter:busca">
                     <td>{{ user.nome }}</td>			
                     <td>{{ user.email }}</td>
                     <td>{{ user.telefone }}</td>			

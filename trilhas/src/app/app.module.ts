@@ -7,8 +7,10 @@ import { routing } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentesModule } from './componentes/componentes.module';
-
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+//import { AgePipe } from 'age-pipe';
 
 
 
@@ -22,7 +24,11 @@ import { ComponentesModule } from './componentes/componentes.module';
     FormsModule,
     ComponentesModule,
     routing,
-    HttpClientModule,        
+    HttpClientModule,   
+    Ng2SearchPipeModule,     
+    Ng2OrderModule,
+    NgxPaginationModule, 
+         
   ],
   providers: [],
   bootstrap: [AppComponent]
