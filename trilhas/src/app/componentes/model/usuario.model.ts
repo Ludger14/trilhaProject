@@ -1,5 +1,5 @@
 export default interface Usuario {
-    nome: string
+    nome: string    
     email: string
     telefone: string
     passeio: string    

@@ -17,7 +17,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UserFilterPipe } from './crud/user-filter.pipe';
-
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [    
@@ -28,6 +28,7 @@ import { UserFilterPipe } from './crud/user-filter.pipe';
     ListarPasseioComponent,
     EditarPasseioComponent,
     UserFilterPipe,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +49,7 @@ import { UserFilterPipe } from './crud/user-filter.pipe';
     PasseioComponent,
     ListarPasseioComponent,
     EditarPasseioComponent,
+    LoginComponent,
   ]
 })
 export class ComponentesModule { }

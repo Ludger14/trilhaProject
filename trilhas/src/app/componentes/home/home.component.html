@@ -3,13 +3,15 @@
         <div class="logo" *ngFor="let log of logo"><a routerLink="">{{ log.logo }}</a></div>
         <nav class="desktop">
             <ul>
-                <li *ngFor="let menu of homemenu"><a href="#{{ menu.name }}">{{ menu.name }}</a></li>                                  
+                <li *ngFor="let menu of homemenu"><a href="#{{ menu.name }}">{{ menu.name }}</a></li>
+                <li><a routerLink="/login">Login</a></li>                                  
             </ul>
         </nav>
         <nav class="mobile">
             <i class="fa fa-bars"></i>
             <ul>
-                <li *ngFor="let menu of homemenu"><a href="#{{ menu.name }}">{{ menu.name }}</a></li>                
+                <li *ngFor="let menu of homemenu"><a href="#{{ menu.name }}">{{ menu.name }}</a></li>
+                <li><a routerLink="/login">Login</a></li>                 
             </ul>
         </nav>            
     </div>

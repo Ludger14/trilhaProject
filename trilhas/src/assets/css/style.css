@@ -107,6 +107,7 @@ nav ul li:hover{
 }
 nav ul li:hover a{
     color: white;
+    text-decoration: none;
 }
 .redes-sociais{
     width: 15%;
@@ -354,7 +355,7 @@ section.fale-conosco > .center{
 .sobre-nos p{
     width: 80%;
     color: black;
-    font-size: 21px;
+    font-size: 20px;
     padding: 15px 0;
     line-height: 40px;
 }
@@ -460,14 +461,14 @@ section.fale-conosco > .center{
 .form-group{
     margin-bottom: 0;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px){    
     ul{
         padding-left: 0;
     }
     nav{
         width: 90%;
         text-align: right;
-    }    
+    }     
     header nav.mobile{
 		display: block;		
 	}
@@ -491,15 +492,15 @@ section.fale-conosco > .center{
 		border-bottom: 1px solid #ccc;
 		padding: 10px 0;
         width: 100%;
-        display: block;
+        display: block;        
 	}
     nav.mobile ul li:hover{
         background-color: #027e66;
-        padding: 10px;
+        padding: 10px;        
     }
 	nav.mobile li a{
 		text-decoration: none;
-		color: black;
+		color: black !important;
 	}
 	nav.desktop{
 		display: none;
